@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import ninja.maxdome.justtodo.gridRecyclerList.AddView
+import ninja.maxdome.justtodo.GridRecyclerView.AddView
 
 /**
  * Created by Maximilian on 01.09.2017.

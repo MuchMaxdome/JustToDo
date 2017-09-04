@@ -1,6 +1,4 @@
-package ninja.maxdome.justtodo.gridRecyclerList
-
-// this is a dummy object
+package ninja.maxdome.justtodo.GridRecyclerView
 
 import android.content.Context
 import android.graphics.Canvas
@@ -11,11 +9,12 @@ import android.view.View
 import ninja.maxdome.justtodo.R
 
 /**
- * Created by Maximilian on 12.08.2017.
+ * Created by Maximilian on 24.08.2017.
  */
-class ExampleView: View {
+class AddView: View {
     val _Background: Paint = Paint()
     val _Border: Paint = Paint()
+    val _Plus: Paint = Paint()
 
     var mHeight: Float = 0F
     var mWidth: Float = 0F
@@ -36,13 +35,19 @@ class ExampleView: View {
     }
 
     private fun init(attrs: AttributeSet?, defStyle: Int){
-        _Background.color = Color.WHITE
+        _Background.color = resources.getColor(R.color.colorAccent)
         _Background.style = Paint.Style.FILL
         _Background.isAntiAlias = true
 
-        _Border.color = resources.getColor(R.color.colorPrimaryDark)
+        _Border.color = resources.getColor(R.color.blackborder)
         _Border.style = Paint.Style.STROKE
         _Background.isAntiAlias = true
+
+        _Plus.color = Color.WHITE
+        _Plus.style = Paint.Style.FILL_AND_STROKE
+        _Plus.isAntiAlias = true
+
+        // this.setOnClickListener { onClick() }
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -60,14 +65,32 @@ class ExampleView: View {
         if (mIsClicked){
             canvas?.drawRoundRect(mRange, mRange, mWidth-mRange, mHeight-mRange, radius, radius, _Background)
         }
-
         canvas?.drawRoundRect(1F, 1F, width.toFloat()-1F,height.toFloat()-1F,radius,radius,_Background)
 
         /*--------------------------------------------------*/
 
-        for (i in 0..100){
+        for (i in 0..120){
             val pos: Float = 1 + i*0.01F
             canvas?.drawRoundRect(pos, pos, width.toFloat()-pos,height.toFloat()-pos,radius,radius,_Border)
         }
+
+        /*---------------------------------------------------*/
+
+        // draw the Plus in the middle
+        val plusThickness = mWidth/12
+
+        canvas?.drawRect(mWidth/2-plusThickness/2, plusThickness*3, mWidth/2+plusThickness/2, mHeight-plusThickness*3, _Plus)
+        canvas?.drawRect(plusThickness*3, mHeight/2-plusThickness/2, mWidth-plusThickness*3, mHeight/2+plusThickness/2, _Plus)
+
+    }
+
+    fun onClick(){
+        mIsClicked = true
+
+        _Background.color =if (_Background.color == Color.WHITE) resources.getColor(R.color.colorAccent) else Color.WHITE
+        _Plus.color =if (_Background.color == Color.WHITE) resources.getColor(R.color.colorAccent) else Color.WHITE
+        invalidate()
+
+        mIsClicked = false
     }
 }

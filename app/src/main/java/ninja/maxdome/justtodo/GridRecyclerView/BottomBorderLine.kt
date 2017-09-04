@@ -1,4 +1,4 @@
-package ninja.maxdome.justtodo.gridRecyclerList
+package ninja.maxdome.justtodo.GridRecyclerView
 
 import android.content.Context
 import android.graphics.Canvas
