@@ -42,11 +42,6 @@ class MainActivity : AppCompatActivity() {
         mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
         mTestRecycler!!.layoutManager = mLayoutManager
 
-        mTestAdapter!!.add(0, ListEntry("","","",""))
-        mTestAdapter!!.add(1,ListEntry("","","",""))
-        mTestAdapter!!.add(2,ListEntry("","","",""))
-        mTestAdapter!!.add(3,ListEntry("","","",""))
-
         // now bind RecyclerView with its Adapter and LayoutManager
         mTestRecycler!!.adapter = mTestAdapter
     }
