@@ -1,4 +1,4 @@
-package ninja.maxdome.justtodo
+package ninja.maxdome.justtodo.gridRecyclerList
 
 import android.content.Context
 import android.graphics.Canvas
@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import ninja.maxdome.justtodo.R
 
 /**
  * Created by Maximilian on 24.08.2017.

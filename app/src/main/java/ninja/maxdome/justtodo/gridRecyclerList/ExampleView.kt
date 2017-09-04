@@ -1,16 +1,14 @@
-package ninja.maxdome.justtodo
+package ninja.maxdome.justtodo.gridRecyclerList
 
 // this is a dummy object
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
-import android.provider.CalendarContract
 import android.util.AttributeSet
 import android.view.View
-import android.widget.Button
+import ninja.maxdome.justtodo.R
 
 /**
  * Created by Maximilian on 12.08.2017.

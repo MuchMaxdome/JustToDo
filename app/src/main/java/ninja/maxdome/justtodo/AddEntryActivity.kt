@@ -11,12 +11,7 @@ import android.text.InputType
 import kotlinx.android.synthetic.main.activity_add_entry.*
 import java.text.SimpleDateFormat
 import java.util.*
-import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
-import android.widget.TextClock
-import android.widget.TimePicker
-import java.sql.Time
-import java.time.Clock
 
 
 class AddEntryActivity : AppCompatActivity() {

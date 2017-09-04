@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.underlined_recycler_content.view.*
+import ninja.maxdome.justtodo.gridRecyclerList.GridListAdapter
 
 class MainActivity : AppCompatActivity() {
     private var mList: MutableList<ListEntry> = ArrayList()

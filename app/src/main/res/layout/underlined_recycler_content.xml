@@ -4,7 +4,7 @@
     android:layout_width="match_parent" android:layout_height="128dp" android:id="@+id/lilList">
 
     <view
-        class="ninja.maxdome.justtodo.BottomBorderLine"
+        class="ninja.maxdome.justtodo.gridRecyclerList.BottomBorderLine"
         id="@+id/lilList_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

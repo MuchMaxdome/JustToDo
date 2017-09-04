@@ -1,4 +1,4 @@
-package ninja.maxdome.justtodo
+package ninja.maxdome.justtodo.gridRecyclerList
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import ninja.maxdome.justtodo.AddEntryActivity
+import ninja.maxdome.justtodo.ListEntry
+import ninja.maxdome.justtodo.R
 
 /**
  * Created by Maximilian on 24.08.2017.
@@ -20,7 +23,7 @@ class GridListAdapter(val context: Context, val mValues: MutableList<ListEntry>)
 
     init{
         if (mValues.isEmpty()){
-            mValues.add(0, ListEntry("Start","","",""))
+            mValues.add(0, ListEntry("Start", "", "", ""))
             notifyItemInserted(0)
         }
     }
@@ -54,7 +57,7 @@ class GridListAdapter(val context: Context, val mValues: MutableList<ListEntry>)
         val name = mValues[position].shortInfo
 
         if (itemType == ITEM_TYPE_NORMAL){
-            (holder as GridListAdapter.NormalHolder).txt.text = name
+            (holder as NormalHolder).txt.text = name
 
             val date: String? = mValues[position].date
             val time: String? = mValues[position].time
@@ -67,7 +70,7 @@ class GridListAdapter(val context: Context, val mValues: MutableList<ListEntry>)
 
             holder.back.setOnClickListener { remove(position) }
         }
-        else if (itemType == ITEM_TYPE_ADD) (holder as GridListAdapter.AddHolder).txt.text = name
+        else if (itemType == ITEM_TYPE_ADD) (holder as AddHolder).txt.text = name
     }
 
     override fun getItemCount(): Int {
