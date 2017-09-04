@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // read the SaveFile
-        val tasks = Storage.retrive(this, "wow")
+        val tasks = Storage.retrive(this@MainActivity, "wow")
 
         if (tasks != null && (mTestAdapter?.mValues?.isEmpty() ?: true)) {
             debugToast("It worked.")
@@ -41,6 +41,11 @@ class MainActivity : AppCompatActivity() {
         // bind the layoutManager on the RecyclerView
         mLayoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.HORIZONTAL, false)
         mTestRecycler!!.layoutManager = mLayoutManager
+
+        mTestAdapter!!.add(0, ListEntry("","","",""))
+        mTestAdapter!!.add(1,ListEntry("","","",""))
+        mTestAdapter!!.add(2,ListEntry("","","",""))
+        mTestAdapter!!.add(3,ListEntry("","","",""))
 
         // now bind RecyclerView with its Adapter and LayoutManager
         mTestRecycler!!.adapter = mTestAdapter
@@ -77,7 +82,6 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
         Storage.save(this, mTestAdapter?.mValues,"wow")
     }
-
 
     override fun onResume() {
         super.onResume()

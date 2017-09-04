@@ -46,7 +46,7 @@ class AddView: View {
         _Plus.style = Paint.Style.FILL_AND_STROKE
         _Plus.isAntiAlias = true
 
-        this.setOnClickListener { onClick() }
+        // this.setOnClickListener { onClick() }
     }
 
     override fun onDraw(canvas: Canvas?) {
@@ -83,7 +83,7 @@ class AddView: View {
 
     }
 
-    public fun onClick(){
+    fun onClick(){
         mIsClicked = true
 
         _Background.color =if (_Background.color == Color.WHITE) resources.getColor(R.color.colorAccent) else Color.WHITE

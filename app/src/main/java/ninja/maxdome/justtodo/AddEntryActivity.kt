@@ -30,6 +30,7 @@ class AddEntryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_entry)
 
+
         mDateFormatter = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
         createTimeFields()
 
