@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ninja.maxdome.justtodo.GridRecyclerView.ExampleView
+    <ninja.maxdome.justtodo.ExampleView
         android:id="@+id/ex_back"
         android:layout_width="80dp"
         android:layout_height="80dp"

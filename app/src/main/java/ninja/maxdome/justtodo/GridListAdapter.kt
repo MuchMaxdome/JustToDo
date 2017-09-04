@@ -1,4 +1,4 @@
-package ninja.maxdome.justtodo.GridRecyclerView
+package ninja.maxdome.justtodo
 
 import android.content.Context
 import android.content.Intent
@@ -8,9 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import ninja.maxdome.justtodo.AddEntryActivity
-import ninja.maxdome.justtodo.ListEntry
-import ninja.maxdome.justtodo.R
 
 /**
  * Created by Maximilian on 24.08.2017.

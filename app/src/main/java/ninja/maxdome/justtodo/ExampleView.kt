@@ -1,4 +1,4 @@
-package ninja.maxdome.justtodo.GridRecyclerView
+package ninja.maxdome.justtodo
 
 // this is a dummy object
 
