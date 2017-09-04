@@ -15,7 +15,7 @@ import ninja.maxdome.justtodo.R
 /**
  * Created by Maximilian on 24.08.2017.
  */
-class GridListAdapter(val context: Context, val mValues: MutableList<ListEntry>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class GridListAdapter(val context: Context,val intent: Intent, val mValues: MutableList<ListEntry>): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     private val ADD_TASK_REQUEST = 1
 
     val ITEM_TYPE_NORMAL = 0
@@ -118,7 +118,6 @@ class GridListAdapter(val context: Context, val mValues: MutableList<ListEntry>)
     }
 
     fun jumpEntryAddActivity(){
-        val jumpintent: Intent = Intent(context, AddEntryActivity::class.java)
-        (context as AppCompatActivity).startActivityForResult(jumpintent, ADD_TASK_REQUEST)
+        (context as AppCompatActivity).startActivityForResult(intent, ADD_TASK_REQUEST)
     }
 }

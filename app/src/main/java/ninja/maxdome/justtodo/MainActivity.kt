@@ -32,8 +32,10 @@ class MainActivity : AppCompatActivity() {
             mList = tasks
         }
 
+        // set up the intent to use this class
+        val intent: Intent = Intent(this, AddEntryActivity::class.java)
 
-        mTestAdapter = GridListAdapter(this, mList)
+        mTestAdapter = GridListAdapter(this, intent, mList)
 
         // create the contents of RecyclerView and its Adapter
         mTestRecycler = this.lilList.lilList_RecycleHorizontal

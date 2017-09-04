@@ -39,6 +39,9 @@ class AddEntryActivity : AppCompatActivity() {
         this.add_time.inputType = InputType.TYPE_NULL
         this.add_time.setOnFocusChangeListener { _, b -> if(b) timeOnClick() }
         this.add_time.setOnClickListener { timeOnClick() }
+
+        this.add_switch_time.isClickable = false
+        this.add_switch_date.isClickable = false
     }
 
     private fun acceptOnClick(){
@@ -111,6 +114,11 @@ class AddEntryActivity : AppCompatActivity() {
             val newDate = Calendar.getInstance()
             newDate.set(year, monthOfYear, dayOfMonth)
             this.add_date.setText(mDateFormatter!!.format(newDate.time))
+
+            // set the switch to default
+            if (!this.add_date.text.isEmpty()) this.add_switch_date.isChecked = true; this.add_switch_date.isClickable = true
+
+
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH))
 
 
@@ -119,6 +127,11 @@ class AddEntryActivity : AppCompatActivity() {
             val minutesStr: String = if (minutes < 10) "0" + minutes.toString() else minutes.toString()
 
             this.add_time.setText("$hoursStr:$minutesStr")
+
+            // set the switch to default
+            if (!this.add_time.text.isEmpty()) this.add_switch_time.isChecked = true; this.add_switch_time.isClickable = true
+
+
         }, newCalendar.get(Calendar.HOUR), newCalendar.get(Calendar.MINUTE), false)
     }
 }
